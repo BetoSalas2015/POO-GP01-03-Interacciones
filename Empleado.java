@@ -47,7 +47,16 @@ public class Empleado
     public Date getIngreso() {
         return new Date(); 
     }
+    
+    public String toString() {
+        return "Empleado: " + nombre + " " + apellido + ", ID: " + 
+                Integer.toString(numeroEmpleado) + 
+                ", Fecha Ingreso: " + ingreso.toString() + ", Salario: " + 
+                Double.toString(salario);
+    }
+    
 }
+
 
 
 
