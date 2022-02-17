@@ -16,13 +16,13 @@ public class Empleado
     private double salario;
     private static int empleados = 100;
     
-    public Empleado(String nom, String ap, double sal, int dia,int mes, int año)
+    public Empleado(String nombre, String apellido, double salario, int dia,int mes, int año)
     {
-        nombre = new String(nom);
-        apellido = new String(ap);
+        this.nombre = new String(nombre);
+        this.apellido = new String(apellido);
         numeroEmpleado = empleados++;
         ingreso = new Date(año, mes, dia);
-        setSalario(sal);
+        setSalario(salario);
     }
     
     public void setSalario(double sal) {
