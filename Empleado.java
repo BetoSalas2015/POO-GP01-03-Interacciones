@@ -25,6 +25,15 @@ public class Empleado
         setSalario(salario);
     }
     
+    public Empleado(Empleado emp) {
+        nombre = new String( emp.getNombre() );
+        apellido = new String( emp.getApellido() );
+        numeroEmpleado = emp.getNumeroEmpleado();
+        Date temp = emp.getIngreso(); 
+        ingreso = new Date(temp.getYear(), temp.getMonth(), temp.getDay());
+        setSalario( emp.getSalario() );
+    }
+    
     public void setSalario(double sal) {
         salario = (sal > 0) ? sal : 1;
     }
@@ -45,9 +54,15 @@ public class Empleado
         return numeroEmpleado;
     }
     
+     public Empleado getEmpleado() {
+         return new Empleado(this);
+     }
+    
     public Date getIngreso() {
         return new Date(); 
     }
+    
+       
     
     public String toString() {
         return "Empleado: " + nombre + " " + apellido + ", ID: " + 
@@ -57,7 +72,8 @@ public class Empleado
     }
     
     public static void main(String args[]) {
-        Empleado robert = new Empleado("Roberto", "Salazar", 800.00, 15,2,2022);
+        Empleado robert;
+        robert = new Empleado("Roberto", "Salazar", 800.00, 15,2,2022);
         System.out.println( robert.toString() );
         
     }
